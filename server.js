@@ -9,9 +9,9 @@ import {exec} from 'child_process';
 import config from './webpack.config';
 
 const APP_PORT = 3000;
-const GRAPHQL_PORT = 8080;
+//const GRAPHQL_PORT = 7474;
 
-let graphQLServer;
+//let graphQLServer;
 let appServer;
 
 function startAppServer(callback) {
@@ -19,7 +19,7 @@ function startAppServer(callback) {
   const compiler = webpack(config);
   appServer = new WebpackDevServer(compiler, {
     contentBase: '/public/',
-    proxy: {'/graphql': `http://localhost:${GRAPHQL_PORT}`},
+   // proxy: {'/graphql': `http://localhost:${GRAPHQL_PORT}`},
     publicPath: '/js/',
     stats: {colors: true}
   });
@@ -32,7 +32,7 @@ function startAppServer(callback) {
     }
   });
 }
-
+/*
 function startGraphQLServer(callback) {
   // Expose a GraphQL endpoint
   clean('./data/schema');
@@ -84,3 +84,5 @@ watcher.on('change', path => {
   );
 });
 startServers();
+*/
+startAppServer();

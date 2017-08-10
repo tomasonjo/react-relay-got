@@ -1,7 +1,3 @@
-# Relay Starter Kit
-
-This kit includes an app server, a GraphQL server implementing a tiny example schema, and a transpiler that you can use to get started building an app with Relay. For a walkthrough with a slightly larger schema, see the [Relay tutorial](https://facebook.github.io/relay/docs/tutorial.html).
-
 ## Installation
 
 ```
@@ -16,19 +12,42 @@ Start a local server:
 npm start
 ```
 
-## Developing
+## Relay settings
 
-Any changes you make to files in the `js/` directory will cause the server to
-automatically rebuild the app and refresh your browser.
+You can set the connection params in `/js/app.js`
 
-If at any time you make changes to `data/schema.js`, stop the server,
-regenerate `data/schema.json`, and restart the server:
+Relay.injectNetworkLayer(
+  new Relay.DefaultNetworkLayer('http://localhost:7474/graphql/', {
+    headers: {
+      Authorization: 'Basic bmVvNGo6YnVyZWsxMjMasdasd=',
+    },
+  })
+);
 
-```
-npm run update-schema
-npm start
-```
 
-## License
+## Sample graphql call
 
-Relay Starter Kit is [BSD licensed](./LICENSE). We also provide an additional [patent grant](./PATENTS).
+ fragment on House {
+            name
+            words
+            founder {
+              name
+            }
+            seats {
+              name
+            }
+            region {
+              name
+            }
+            follows {
+              name
+            }
+            followers(first:10) {
+              name
+              seats { name }
+            }
+      }
+
+with param
+
+new AppHomeRoute({name:'House Stark of Winterfell'})
