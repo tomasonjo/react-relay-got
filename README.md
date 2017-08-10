@@ -1,3 +1,8 @@
+## Neo4j graphql server
+
+follow instructions from https://medium.com/@mesirii/a-game-of-data-and-graphql-97ee2ca297ce
+
+
 ## Installation
 
 ```

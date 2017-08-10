@@ -10,7 +10,7 @@ import Relay from 'react-relay';
 Relay.injectNetworkLayer(
   new Relay.DefaultNetworkLayer('http://localhost:7474/graphql/', {
     headers: {
-      Authorization: 'Basic bmVvNGo6YnVyZWsxMjM=',
+      Authorization: 'Basic bmVvNGo6YnVyZWsxMjMasda=',
     },
   })
 );
