@@ -15,7 +15,7 @@ npm start
 ## Relay settings
 
 You can set the connection params in `/js/app.js`
-
+```
 Relay.injectNetworkLayer(
   new Relay.DefaultNetworkLayer('http://localhost:7474/graphql/', {
     headers: {
@@ -23,10 +23,10 @@ Relay.injectNetworkLayer(
     },
   })
 );
-
+```
 
 ## Sample graphql call
-
+```
  fragment on House {
             name
             words
@@ -47,7 +47,8 @@ Relay.injectNetworkLayer(
               seats { name }
             }
       }
-
+```
 with param
-
+```
 new AppHomeRoute({name:'House Stark of Winterfell'})
+```
